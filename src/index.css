@@ -13,18 +13,102 @@ body {
   flex: 1;
   flex-direction: row;
   margin-top: 10%;
+  background-color: #f7f7f7;
   font-size: 2rem;
+  border: 1px solid #ccc;
+  box-shadow: rgba(50, 50, 93, 0.14902) 0px 2px 5px, rgba(0, 0, 0, 0.0196078) 0px 1px 4px;
 }
 .nav-item {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
   cursor: pointer;
 }
 
 .tab-content {
   flex: 5;
-  margin-top: 3rem;
+  margin: 2rem;
 }
+.tab-pane {
+  min-height: 20rem;
+}
+
 .nav-tabs {
   flex: 1;
+  flex-direction: column;
   justify-content: center;
-  border-right: 1px solid #dee2e6;
+  box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px, rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
+}
+.nav-link {
+  flex: 1;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  flex-direction: column;
+}
+.nav-link .tab-inner {
+  flex-grow: initial;
+}
+
+.nav-tabs .nav-link:hover {
+  border: none !important;
+}
+.tab-pane label {
+  display: block;
+}
+
+.checkoutform {
+  text-align: left;
+  margin-left: 20%;
+}
+
+.label, .btn {
+  font-weight: bold;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.label-group {
+  margin-bottom: 2rem;
+}
+
+.label-group.stripe {
+  max-width: 40rem;
+}
+
+.label-group input{
+  font-size: 1.4rem;
+  width: 40rem;
+}
+
+
+.label-group .StripeElement,
+.label-group input {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 1.2rem;
+  box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px, rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
+}
+
+.active .nav-link{
+  background-color: #7795f8;
+  color: #fff !important;
+  box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px, rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
+}
+.active .nav-link:after {
+  content: '';
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #7795f8;
+  right: -8px;
+  transform: rotate(45deg);
+}
+
+.btn {
+  background-color: #7795f8;
+  border: none;
 }

@@ -28,14 +28,13 @@ export default class TabList extends Component {
   render() {
     const headers = React.Children.map(this.props.children, (child, index) => {
       return (
-        <NavItem>
+        <NavItem className={classnames({ active: this.state.activeTab === index })}>
           <NavLink
-            className={classnames({ active: this.state.activeTab === index })}
             onClick={() => {
               this.toggle(index);
             }}
             >
-            {child.props.name}
+            <span className="tab-inner">{child.props.name}</span>
           </NavLink>
         </NavItem>
       );
