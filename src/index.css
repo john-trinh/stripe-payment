@@ -61,7 +61,8 @@ body {
 
 .checkoutform {
   text-align: left;
-  margin-left: 20%;
+  max-width: 50rem;
+  margin: 0 auto;
 }
 
 .label, .btn {
