@@ -9,6 +9,7 @@ export default class TableCell extends Component {
   constructor(props) {
     super(props);
 
+    // this.reloadData = this.reloadData.bind(this);
     this.state= {
       tableBody: [],
       loading: true,
@@ -56,16 +57,21 @@ export default class TableCell extends Component {
           </thead>
           <tbody>
             {this.state.tableBody.map((row, index) => (
-              <tr>
-                <BodyCell content={row.id} text key={index + "a"}/>
-                <BodyCell content={row.amount} text key={index + "b"}/>
-                <BodyCell content={row.refunded.toString()} text key={index + "c"}/>
-                <BodyCell content={row.dispute ? "true" : 'false'} text key={index + "d"}/>
+              <tr key={index + "asdfdsfsaf"}>
+                <BodyCell content={row.id} text/>
+                <BodyCell content={row.amount} text />
+                <BodyCell content={row.refunded.toString()} text/>
+                <BodyCell content={row.dispute ? "true" : 'false'} text />
                 {row.dispute ? (
-                  <BodyCell content={'reason'} text key={index + "e"}/>) : (
-                  <BodyCell content={''} text key={index + "ds"}/>
+                  <BodyCell content={'reason'} text/>) : (
+                  <BodyCell content={''} text />
                 )}
-                <BodyCell content={(<RefundButton url={row.refunds.url} amount ={row.amount} disabled={row.refunded} id={row.id} key={index + "affsdf"}/>)} key={index + "f"} reload={this.reloadData.bind(this)}/>
+                <BodyCell
+                  url={row.refunds.url}
+                  amount ={row.amount}
+                  reload={this.reloadData.bind(this)}
+                  disabled={row.refunded} id={row.id}
+                  content={(<RefundButton />)} />
               </tr>
             ))}
           </tbody>

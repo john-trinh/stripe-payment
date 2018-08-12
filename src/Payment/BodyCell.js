@@ -4,7 +4,7 @@ export default class BodyCell extends React.Component {
 
   renderButton() {
     return(
-      <td>{React.cloneElement(this.props.content, this.props.content.props)}</td>
+      <td>{React.cloneElement(this.props.content, this.props)}</td>
     );
   }
 

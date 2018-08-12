@@ -40,8 +40,14 @@ class CheckoutForm extends React.Component {
       })
       .then(data => data.json())
       .then(response => {
+        let res;
+        if (response.status) {
+          res = response.status + response.id;
+        } else {
+          res = response.error.message;
+        }
         this.setState({
-          latestCharge: response.status + ' ' + response.id
+          latestCharge: res
         });
         event.reset();
         this._element.clear();
