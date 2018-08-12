@@ -1,8 +1,8 @@
 # Project 3 - *Stripe Central*
 
-**Name of your app** is an app using the [Stripe API](https://stripe.com/docs/api).
+This app using the [Stripe API](https://stripe.com/docs/api).
 
-Time spent: **X** hours spent in total
+Time spent: **20** hours spent in total
 
 ## User Stories
 
@@ -10,15 +10,15 @@ The following **required** functionality is completed:
 
 - [x] User has two tabs, one for Checkout, and one for Charges.
 - [x] User can see the currently active tab.
-- [ ] User can create a charge for a desired amount on the Checkout tab.
-- [ ] User sees an error message when there is a card processing error.
-- [ ] User can see past charges on the Charges tab.
+- [x] User can create a charge for a desired amount on the Checkout tab.
+- [x] User sees an error message when there is a card processing error.
+- [x] User can see past charges on the Charges tab.
 
 The following **optional** features are implemented:
 
 - [ ] User can specify currency as part of the charges.
 - [ ] Clicking on a table header should sort the entries by that element.
-- [ ] User can refund charges from the charges tab.
+- [x] User can refund charges from the charges tab.
 - [ ] Graph of charges over time.
 - [ ] Third tab for disputes.
 
@@ -30,13 +30,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
-
-## Notes
-
-Describe any challenges encountered while building the app.
+ ![alt text](react.gif)
 
 ## License
 
