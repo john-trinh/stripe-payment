@@ -94,6 +94,12 @@ body {
   box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px, rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
 }
 
+.status {
+  color: #ccc;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
 .active .nav-link{
   background-color: #7795f8;
   color: #fff !important;
@@ -112,4 +118,46 @@ body {
 .btn {
   background-color: #7795f8;
   border: none;
+}
+.wrap-table {
+  max-width: 100%;
+  overflow-x: scroll;
+  background-color: #fff;
+}
+
+.table {
+  border: 1px solid #ccc;
+}
+.table thead{
+  background-color: #ccc;
+}
+
+.table tr:nth-child(2n + 2) {
+  background-color: #f7f7f7;
+}
+
+@media (max-width: 768px) {
+  .wrap-tabs {
+    flex-direction: column;
+  }
+  .nav-tabs {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    padding: 1rem 0;
+  }
+
+  .nav-link::after {
+    left: 50%;
+    margin-left: -7px;
+    bottom: -7px;
+  }
+  .label-group.stripe {
+    max-width: 100%;
+  }
+
+  .label-group input {
+    width: 100%;
+  }
 }

@@ -17,14 +17,15 @@ class CheckoutForm extends React.Component {
 
   async handleSubmit(ev) {
     ev.preventDefault();
-    // const card = this.props.stripe.elements.create('card');
     this.setState({
       latestCharge: 'Creating token...'
     });
     const key = 'sk_test_r2Y08Xt7doe5pxgMfl3XnWbm';
+    let event = ev.target;
     let amount = ev.target.amount.value;
     let name = ev.target.name.value;
     let {token} = await this.props.stripe.createToken({name: ev.target.name.value});
+
     this.setState({
       latestCharge: 'Creating charge...'
     }, () => {
@@ -40,8 +41,10 @@ class CheckoutForm extends React.Component {
       .then(data => data.json())
       .then(response => {
         this.setState({
-          latestCharge: response.status + response.charge_id
+          latestCharge: response.status + ' ' + response.id
         });
+        event.reset();
+        this._element.clear();
       });
     });
   };
@@ -55,7 +58,7 @@ class CheckoutForm extends React.Component {
         </label>
         <label className="label-group stripe">
           <div className="label">Card details</div>
-          <CardElement style={this.props.style}
+          <CardElement style={this.props.style} onReady={(element) => this._element = element}
           />
         </label>
         <label className="label-group">
@@ -63,7 +66,7 @@ class CheckoutForm extends React.Component {
           <input type="text" name="amount" required/>
         </label>
         <Button>Pay</Button>
-        <h2>{this.state.latestCharge}</h2>
+        <h2 className="status">{this.state.latestCharge}</h2>
       </form>
     );
   };
